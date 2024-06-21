@@ -1,11 +1,7 @@
-import Link from "next/link";
+import Ensaios from "@/components/projetos/ensaios/Ensaios";
 
 export default function page() {
     return (
-        <div>
-            <h1>ENSAIOS</h1>
-            <Link href={"/fotografia"}>go back</Link>
-            <Link href={"/"}>go home</Link>
-        </div>
+        <Ensaios />
     )
 }

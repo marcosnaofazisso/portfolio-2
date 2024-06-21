@@ -1,10 +1,7 @@
-import Link from "next/link";
+import Contato from "@/components/contato/Contato";
 
 export default function page() {
     return (
-        <div>
-            <h1>CONTATO</h1>
-            <Link href={"/"}>go back</Link>
-        </div>
+        <Contato />
     )
 }

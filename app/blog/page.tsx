@@ -1,10 +1,7 @@
-import Link from "next/link";
+import Blog from "@/components/blog/Blog";
 
 export default function page() {
     return (
-        <div>
-            <h1>BLOG</h1>
-            <Link href={"/"}>go back</Link>
-        </div>
+        <Blog />
     )
 }

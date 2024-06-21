@@ -1,12 +1,7 @@
-import Link from "next/link";
+import HomeMain from "@/components/home/Home";
 
 export default function Home() {
   return (
-    <main>
-      <div>
-        <h1>Hello world</h1>
-        <Link href={"/fotografia"}>go to fotografia</Link>
-      </div>
-    </main>
+    <HomeMain />
   );
 }
