@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom Reset CSS */
+@layer base {
+
+  /* Remove default margin */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  /* Set a consistent font-family */
+  body {
+    font-family: serif;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Remove default styling for lists */
+  ul,
+  ol {
+    list-style: none;
+  }
+
+  /* Remove default link styling */
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  /* Reset images and media */
+  img,
+  picture,
+  video,
+  canvas,
+  svg {
+    display: block;
+    max-width: 100%;
+  }
+
+  /* Ensure consistent input, button, and textarea styling */
+  input,
+  button,
+  textarea,
+  select {
+    font: inherit;
+  }
+}
