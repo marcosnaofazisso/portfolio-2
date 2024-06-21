@@ -1,10 +1,14 @@
+import { useTranslations } from 'next-intl';
 import Link from 'next/link'
 
 export default function HomeMain() {
+
+    const home = useTranslations('home');
+    
     return (
         <main>
             <div>
-                <h1>Hello world</h1>
+                <h1>{home('title')}</h1>;
                 <Link href={"/fotografia"}>go to fotografia</Link>
                 <br />
                 <Link href={"/projetos"}>go to projetos</Link>
