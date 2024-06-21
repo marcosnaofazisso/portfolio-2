@@ -1,14 +1,11 @@
-import { useTranslations } from 'next-intl';
 import Link from 'next/link'
 
 export default function HomeMain() {
 
-    const home = useTranslations('home');
-    
     return (
         <main>
             <div>
-                <h1>{home('title')}</h1>;
+                <h1>Home</h1>;
                 <Link href={"/fotografia"}>go to fotografia</Link>
                 <br />
                 <Link href={"/projetos"}>go to projetos</Link>
@@ -19,7 +16,9 @@ export default function HomeMain() {
                 <br />
                 <Link href={"/blog"}>go to blog</Link>
                 <br />
-                <Link href={"/CHURROS"}>go to CHURROS</Link>
+                <Link href={"/CHURROS"}>go to NOT FOUND</Link>
+                <br />
+                {/* <Link href={() => asdasd}>go to ERROR</Link> */}
                 <br />
             </div>
         </main>
