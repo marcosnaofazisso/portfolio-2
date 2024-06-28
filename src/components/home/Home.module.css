@@ -1,0 +1,17 @@
+.mainContainer {
+    background-image: url('../../assets/img/bg-white-paper-texture.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: repeat-y;
+    height: auto;
+    height: 96vh; /* */
+}
+
+@media (min-height: 1080px) {
+    .mainContainer {
+        background-size: contain;
+        background-repeat: repeat-y;
+        background-position: center;
+        height: 100vh;
+    }
+}

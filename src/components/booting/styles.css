@@ -1,0 +1,30 @@
+.booting-container {
+  font-size: 1rem;
+  color: #333;
+}
+
+.typing-effect::after {
+  content: '.';
+  animation: dots 1s steps(1, end) infinite;
+}
+
+@keyframes dots {
+
+  0%,
+  20% {
+    content: '.';
+  }
+
+  40% {
+    content: '..';
+  }
+
+  60% {
+    content: '...';
+  }
+
+  80%,
+  100% {
+    content: '';
+  }
+}

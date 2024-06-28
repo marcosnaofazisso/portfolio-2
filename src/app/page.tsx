@@ -1,7 +1,7 @@
-import HomeMain from "@/components/home/Home";
+import Booting from "@/components/booting/Booting";
 
-export default function Home() {
+export default function page() {
   return (
-    <HomeMain />
+    <Booting />
   );
 }
