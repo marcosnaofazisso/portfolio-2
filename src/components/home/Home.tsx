@@ -5,7 +5,7 @@ export default function HomeMain() {
     return (
         <main>
             <div>
-                <h1>Home</h1>;
+                <h1>Home</h1>
                 <Link href={"/fotografia"}>go to fotografia</Link>
                 <br />
                 <Link href={"/projetos"}>go to projetos</Link>
