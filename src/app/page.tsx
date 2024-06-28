@@ -1,13 +1,7 @@
 import Booting from "@/components/booting/Booting";
-import HomeMain from "@/components/home/Home";
-import styles from "./page.module.css"
 
-export default function Home() {
+export default function page() {
   return (
-    <main className={`${styles.cutive}`}>
-      <Booting >
-        <HomeMain />
-      </Booting>
-    </main>
+    <Booting />
   );
 }

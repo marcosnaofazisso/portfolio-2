@@ -1,20 +1,20 @@
 "use client"
 
-import React, { useEffect, useState } from 'react';
+import { useEffect } from 'react';
+import HomeMain from '../home/Home';
 import './styles.css';
+import { useBootingStore } from '@/store/boot/bootStore';
 
-interface BootingProps {
-    children: React.ReactNode;
-}
+export default function Booting() {
 
-export default function Booting({ children }: BootingProps) {
+    const bootStore = useBootingStore()
+    const isBooting = useBootingStore().isBooting
 
-    const [isBooting, setIsBooting] = useState(true);
     const bootingDuration = 5;
 
     useEffect(() => {
         const timer = setTimeout(() => {
-            setIsBooting(false);
+            bootStore.hasBooted()
         }, bootingDuration * 100);
 
         return () => clearTimeout(timer); // Cleanup timer on component unmount
@@ -28,5 +28,5 @@ export default function Booting({ children }: BootingProps) {
         );
     }
 
-    return <>{children}</>; // Render the passed children after booting
+    return <HomeMain />
 }
