@@ -1,23 +1,33 @@
 "use client"
 
 import { useBootingStore } from "@/store/boot/bootStore";
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import Select from '@mui/material/Select';
+import { useLanguageStore } from "@/store/language/languageStore";
+import { languages } from "@/utils/helpers/languageHelper";
+import { MenuItem } from "@mui/material";
 import Link from "next/link";
+import { LanguageSelect } from "../ui/selects/LanguageSelect";
 import { IOSSwitch } from "../ui/switches/Switch";
 import styles from './Header.module.css';
-import { languages } from "@/utils/helpers/languageHelper";
 
 export default function Header() {
 
+    const languageStore = useLanguageStore()
+
     const isBooting = useBootingStore().isBooting
+
+    const languageKeyValue: number = parseInt(languageStore.selectedLanguage.key) - 1
+
+    const handleChange = (index: number | string) => {
+        const validIndex: number = typeof index === 'string' ? parseInt(index) : index
+        languageStore.changeSelected(validIndex)
+    }
 
     return (
         <>
             {isBooting ? <></> :
                 <header className={styles.header}>
                     <div className={styles.menu}>
-                        <Link href={"/home"} className={styles.home}>Home</Link>
+                        <Link href={"/"} className={styles.home}>Home</Link>
                         <hr className={styles.barRight} />
                         <Link href={"/fotografia"} className={styles.fotografia}>Fotografia</Link>
                         <hr className={styles.barLeft} />
@@ -26,32 +36,20 @@ export default function Header() {
                     </div>
                     <div className={styles.additional}>
                         <div>
-                            <Select
-                                sx={{
-                                    border: 0,
-                                    boxShadow: "none",
-                                    ".MuiOutlinedInput-notchedOutline": { border: 0 },
-                                    "&.MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline":
-                                    {
-                                        border: 0,
-                                    },
-                                    "&.MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline":
-                                    {
-                                        border: 0,
-                                    },
-                                }}
-                                value={0}
-                                IconComponent={ExpandMoreIcon}
-                                label="Age">
-                                {languages.map((language, index) => (
-                                    <li
-                                        key={index}
-                                        value={index}
-                                        className={index === 0 ? styles.invisible : ''}>
-                                        {language}
-                                    </li>
-                                ))}
-                            </Select>
+                            <LanguageSelect
+                                value={languageKeyValue}
+                                onChange={(event) => handleChange(event.target.value)}
+                                label="Language Selected">
+                                {languages.map((lang, index) => {
+                                    const [key, languageName] = Object.entries(lang)[0];
+                                    return (
+                                        <MenuItem
+                                            key={key}
+                                            value={index}>
+                                            {languageName}
+                                        </MenuItem>)
+                                })}
+                            </LanguageSelect>
                         </div>
                         <div>
                             <IOSSwitch defaultChecked />

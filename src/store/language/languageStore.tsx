@@ -1,18 +1,26 @@
 import { languages } from "@/utils/helpers/languageHelper";
 import { create } from "zustand";
 
+interface Language {
+    key: string,
+    name: string
+}
+
 type LanguageStore = {
-    selectedLanguage: string,
+    selectedLanguage: Language,
     changeSelected: (index: number) => void;
 }
 
 export const useLanguageStore = create<LanguageStore>((set) => ({
-    selectedLanguage: languages[0],
+    selectedLanguage: { key: Object.keys(languages[0])[0], name: Object.values(languages[0])[0] },
     changeSelected: (index: number) => {
-        if (index >= 0 && index < languages.length) {
-            set({ selectedLanguage: languages[index] });
+        const selected = languages[index];
+        if (selected) {
+            const languageKey = Object.keys(selected)[0];
+            const languageName = selected[languageKey];
+            set({ selectedLanguage: { key: languageKey, name: languageName } });
         } else {
-            console.warn(`Index ${index} is out of bounds for languages array`);
+            console.warn(`Index "${index}" was not found in the languages array`);
         }
     },
 }))

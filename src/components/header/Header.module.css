@@ -1,12 +1,11 @@
 .header {
-    position: relative;
+    position: fixed;
+    top: 0;
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
     background-color: whitesmoke;
     padding: 4px 10px;
     width: 100%;
-
 }
 
 .menu {
@@ -38,8 +37,8 @@
 }
 
 .fotografia {
-    margin-top: -25px;
-    margin-left: 220px;
+    margin-top: -30px;
+    margin-left: 230px;
 }
 
 .blog {
@@ -70,6 +69,7 @@
 .additional {
     display: flex;
     flex-direction: row;
+    align-items: center;
     margin-left: auto;
     gap: 1rem;
 }
