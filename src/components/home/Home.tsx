@@ -1,11 +1,19 @@
 import Link from 'next/link'
+import MainBanner from '../banners/home/MainBanner'
 import styles from "./Home.module.css"
 
+import { motion, useScroll } from "framer-motion"
+
+
 export default function HomeMain() {
+
+    const { scrollYProgress } = useScroll();
 
     return (
         <div className={styles.mainContainer}>
             <h1>Home</h1>
+            <motion.div style={{ scaleX: scrollYProgress }} />
+            <MainBanner />
             <Link href={"/fotografia"}>go to fotografia</Link>
             <br />
             <Link href={"/projetos"}>go to projetos</Link>
