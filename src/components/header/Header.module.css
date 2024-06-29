@@ -1,0 +1,78 @@
+.header {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: whitesmoke;
+    padding: 4px 10px;
+    width: 100%;
+
+}
+
+.menu {
+    position: fixed;
+    border-radius: 200px;
+    color: #000;
+    background-color: transparent;
+
+    height: 350px;
+    width: 350px;
+
+    right: 80px;
+    margin-left: auto;
+}
+
+.menu a {
+    position: fixed;
+    font-size: 2rem;
+}
+
+.menu a:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.home {
+    margin-top: 50px;
+    margin-left: 130px;
+}
+
+.fotografia {
+    margin-top: -25px;
+    margin-left: 220px;
+}
+
+.blog {
+    margin-top: 60px;
+    margin-left: 140px;
+}
+
+.contato {
+    margin-top: -25px;
+    margin-left: -20px;
+}
+
+
+.barRight {
+    margin-top: 150px;
+    border: 2px solid black;
+    transform: rotate(151deg);
+}
+
+.barLeft {
+    position: relative;
+    width: 487px;
+    top: 22px;
+    border: 2px solid black;
+    transform: rotate(25deg);
+}
+
+.additional {
+    display: flex;
+    flex-direction: row;
+    margin-left: auto;
+    gap: 1rem;
+}
+.invisible {
+    display: none;
+}
